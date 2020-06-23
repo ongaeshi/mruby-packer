@@ -19,6 +19,7 @@ task :pack do
   cp "#{MRUBY_DIR}/build/host/mrblib/mrblib.c", SRC_DIR
   cp_r "#{MRUBY_DIR}/include", "#{INCLUDE_DIR}/.."
   cp FileList["#{MRUBY_DIR}/src/*.h"], INCLUDE_DIR
+  cp "gem_init.c", SRC_DIR
 end
 
 task :clean do
