@@ -29,6 +29,15 @@ def mruby_print
   cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
 end
 
+def mruby_fiber
+  dir = "#{MRBGEMS_DIR}/mruby-fiber"
+  build_dir = "#{BUILD_MRBGEMS_DIR}/mruby-fiber"
+  prefix = "gem_fiber"
+
+  cp "#{dir}/src/fiber.c", "#{SRC_DIR}/#{prefix}_fiber.c"
+  cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
+end
+
 task :default => :pack
 
 task :pack do
@@ -46,6 +55,7 @@ task :pack do
   # gems
   mruby_compiler
   mruby_print
+  mruby_fiber
 end
 
 task :clean do
