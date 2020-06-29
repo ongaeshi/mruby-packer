@@ -16,6 +16,7 @@ def mruby_compiler
 
   cp "#{dir}/core/codegen.c", "#{SRC_DIR}/#{prefix}_codegen.c"
   cp "#{dir}/core/y.tab.c", "#{SRC_DIR}/#{prefix}_y.tab.c"
+  sh "patch -p0 < #{prefix}_y.tab.c.patch"
   cp "#{dir}/core/node.h", INCLUDE_DIR
   cp "#{dir}/core/lex.def", INCLUDE_DIR
 end
@@ -51,6 +52,7 @@ task :pack do
   cp_r "#{MRUBY_DIR}/include", "#{INCLUDE_DIR}/.."
   cp FileList["#{MRUBY_DIR}/src/*.h"], INCLUDE_DIR
   cp "gem_init.c", SRC_DIR
+  sh "patch -p0 < fmt_fp.c.patch"
 
   # gems
   mruby_compiler

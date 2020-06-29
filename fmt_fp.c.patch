@@ -1,0 +1,11 @@
+--- mruby/src/fmt_fp.c	2020-06-27 00:30:53.304172700 +0900
++++ mruby/src/fmt_fp_patch.c	2020-06-29 19:49:36.996094600 +0900
+@@ -142,7 +142,7 @@ fmt_fp(struct fmt_args *f, long double y
+   char buf[9+LDBL_MANT_DIG/4], *s;
+   const char *prefix="-0X+0X 0X-0x+0x 0x";
+   ptrdiff_t pl;
+-  char ebuf0[3*sizeof(int)], *ebuf=&ebuf0[3*sizeof(int)], *estr;
++  char ebuf0[3*sizeof(int)], *ebuf=&ebuf0[3*sizeof(int)], *estr=NULL;
+ 
+   pl=1;
+   if (signbit(y)) {
