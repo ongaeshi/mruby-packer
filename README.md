@@ -2,7 +2,7 @@
 (Experimental) Pack murby source code and headers in a buildable format.
 
 ## Download
-[Release](https://github.com/ongaeshi/mruby-packer/releases)
+[Releases](https://github.com/ongaeshi/mruby-packer/releases) page.
 
 Copy the unzipped files to your project.
 - Add `mruby/src` to build target
