@@ -40,9 +40,9 @@ def mruby_fiber
   cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
 end
 
-task :default => :pack
+task :default => :all
 
-task :pack do
+task :all do
   mkdir_p PACK_DIR
   mkdir_p SRC_DIR
   mkdir_p INCLUDE_DIR
