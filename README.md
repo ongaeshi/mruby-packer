@@ -1,5 +1,5 @@
 # mruby-packer
-(Experimental) Pack murby source code and headers in a buildable format.
+(Experimental) Pack mruby source code and headers in a buildable format.
 
 ## Download
 [Releases](https://github.com/ongaeshi/mruby-packer/releases) page.
