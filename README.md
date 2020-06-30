@@ -10,7 +10,7 @@ Copy the unzipped files to your project.
 
 ## Build
 - First, build [mruby](https://github.com/mruby/mruby)
-- Clone murby-packer next to mruby
+- Clone mruby-packer next to mruby
 ```
 $ pwd
 /path/to/mruby
