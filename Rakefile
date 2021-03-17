@@ -4,6 +4,7 @@ require 'rake'
 
 MRUBY_DIR = "../mruby"
 MRBGEMS_DIR = "#{MRUBY_DIR}/mrbgems"
+MRBGEMS_REPOS_DIR = "#{MRUBY_DIR}/build/repos/host"
 BUILD_MRBGEMS_DIR = "#{MRUBY_DIR}/build/host/mrbgems"
 
 PACK_DIR = "mruby"
@@ -40,6 +41,15 @@ def mruby_fiber
   cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
 end
 
+def mruby_require
+  dir = "#{MRBGEMS_REPOS_DIR}/mruby-require"
+  build_dir = "#{BUILD_MRBGEMS_DIR}/mruby-require"
+  prefix = "gem_require"
+
+  cp "#{dir}/src/mrb_require.c", "#{SRC_DIR}/#{prefix}_require.c"
+  cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
+end
+
 task :default => :all
 
 task :all do
@@ -60,6 +70,7 @@ task :all do
   mruby_compiler
   mruby_print
   mruby_fiber
+  mruby_require
 end
 
 task :clean do
