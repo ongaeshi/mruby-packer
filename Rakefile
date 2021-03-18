@@ -23,23 +23,17 @@ def mruby_compiler
   cp "#{dir}/core/lex.def", INCLUDE_DIR
 end
 
-def mruby_print
-  dir = "#{MRBGEMS_DIR}/mruby-print"
-  build_dir = "#{BUILD_MRBGEMS_DIR}/mruby-print"
-  prefix = "gem_print"
+def mrb_c(name)
+  dir = "#{MRBGEMS_DIR}/mruby-#{name}"
+  build_dir = "#{BUILD_MRBGEMS_DIR}/mruby-#{name}"
+  prefix = "gem_#{name}"
 
-  cp "#{dir}/src/print.c", "#{SRC_DIR}/#{prefix}_print.c"
+  cp "#{dir}/src/#{name}.c", "#{SRC_DIR}/#{prefix}_#{name}.c"
   cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
 end
 
-def mruby_fiber
-  dir = "#{MRBGEMS_DIR}/mruby-fiber"
-  build_dir = "#{BUILD_MRBGEMS_DIR}/mruby-fiber"
-  prefix = "gem_fiber"
-
-  cp "#{dir}/src/fiber.c", "#{SRC_DIR}/#{prefix}_fiber.c"
-  cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
-end
+def mruby_print = mrb_c("print")
+def mruby_fiber = mrb_c("fiber")
 
 def mruby_require
   dir = "#{MRBGEMS_REPOS_DIR}/mruby-require"
