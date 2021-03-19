@@ -86,19 +86,27 @@ task :all do
   # stdlib-ext.gembox
   mrb_copy("pack")
   mrb_copy("sprintf")
-  # mrb_copy("time") # TODO: Need include support
+  # mrb_copy("time") # TODO: Need include support.
   mrb_copy("struct")
   mrb_copy("random")
+
+  # stdlib-io.gembox
+  # mrb_copy("io")     # TODO: More special.
+  # mrb_copy("socket") # TODO: src/ is special.
+  mrb_copy("print")
 
   # math.gembox
   mrb_copy("math")
   mrb_copy("rational")
   mrb_copy("complex")
 
-  mrb_copy("print")
-
-  # special setting gems
+  # metaprog.gembox
+  mrb_copy("metaprog")
+  mrb_copy("method")
+  mrb_copy("eval")
   mruby_compiler
+
+  # Additional gems
   mruby_require
 end
 
