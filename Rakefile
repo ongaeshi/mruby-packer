@@ -83,6 +83,13 @@ task :all do
   mrb_copy("kernel-ext")
   mrb_copy("class-ext")
 
+  # stdlib-ext.gembox
+  mrb_copy("pack")
+  mrb_copy("sprintf")
+  # mrb_copy("time") # TODO: Need include support
+  mrb_copy("struct")
+  mrb_copy("random")
+
   # math.gembox
   mrb_copy("math")
   mrb_copy("rational")
