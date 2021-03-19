@@ -48,32 +48,6 @@ def mruby_require
   cp "#{build_dir}/gem_init.c", "#{SRC_DIR}/#{prefix}_init.c"
 end
 
-# stdlib.gembox
-def mruby_compar_ext = mrb_copy("compar-ext")
-def mruby_enum_ext = mrb_copy("enum-ext")
-def mruby_string_ext = mrb_copy("string-ext")
-def mruby_numeric_ext = mrb_copy("numeric-ext")
-def mruby_array_ext = mrb_copy("array-ext")
-def mruby_hash_ext = mrb_copy("hash-ext")
-def mruby_range_ext = mrb_copy("range-ext")
-def mruby_proc_ext = mrb_copy("proc-ext")
-def mruby_symbol_ext = mrb_copy("symbol-ext")
-def mruby_object_ext = mrb_copy("object-ext")
-def mruby_objectspace = mrb_copy("objectspace")
-def mruby_fiber = mrb_copy("fiber")
-def mruby_enumerator = mrb_copy("enumerator")
-def mruby_enum_lazy = mrb_copy("enum-lazy")
-def mruby_toplevel_ext = mrb_copy("toplevel-ext")
-def mruby_kernel_ext = mrb_copy("kernel-ext")
-def mruby_class_ext = mrb_copy("class-ext")
-
-# math.gembox
-def mruby_math = mrb_copy("math")
-# def mruby_rational
-# def mruby_complex
-
-def mruby_print = mrb_copy("print")
-    
 task :default => :all
 
 task :all do
@@ -116,7 +90,7 @@ task :all do
 
   mrb_copy("print")
 
-  # special
+  # special setting gems
   mruby_compiler
   mruby_require
 end
