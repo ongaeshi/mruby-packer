@@ -28,3 +28,7 @@ cp ../mruby/src/array.c ../mruby/src/backtrace.c...
 .
 .
 ```
+
+## TIPS
+- Build error on VS2019
+  - Add define of `_CRT_SECURE_NO_WARNINGS` to vcxproj
