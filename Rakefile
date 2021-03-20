@@ -19,7 +19,6 @@ def mruby_compiler
 
   cp "#{dir}/core/codegen.c", "#{SRC_DIR}/#{prefix}_codegen.c"
   cp "#{dir}/core/y.tab.c", "#{SRC_DIR}/#{prefix}_y.tab.c"
-  sh "patch -p0 --no-backup-if-mismatch < #{prefix}_y.tab.c.patch"
   cp "#{dir}/core/node.h", INCLUDE_DIR
   cp "#{dir}/core/lex.def", INCLUDE_DIR
 end
