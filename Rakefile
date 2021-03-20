@@ -84,6 +84,7 @@ task :all do
 
   # stdlib-ext.gembox
   mrb_copy("pack")
+  sh "patch -p0 --no-backup-if-mismatch < pack.c.patch"
   mrb_copy("sprintf")
   # mrb_copy("time") # TODO: Need include support.
   mrb_copy("struct")
